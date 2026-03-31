@@ -1,0 +1,109 @@
+.formCard {
+  animation: slideUp 0.4s ease-out forwards;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-md);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.formGroup label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  position: absolute;
+  left: 12px;
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+.inputWrapper input,
+.inputWrapper select,
+.standardInput {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-solid);
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-fast);
+}
+
+.standardInput {
+  padding-left: 12px;
+}
+
+.inputWrapper select {
+  padding-left: 12px; /* override */
+  appearance: none;
+}
+
+/* Specific override for select to push text past absolute icon */
+.inputWrapper:has(select) .icon {
+  z-index: 10;
+}
+.inputWrapper:has(select) select {
+  padding-left: 40px;
+}
+
+.inputWrapper input:focus,
+.inputWrapper select:focus,
+.standardInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.helperText {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}

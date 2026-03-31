@@ -1,0 +1,245 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-md);
+}
+
+.headerActions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.statCard {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
+}
+
+.statIconWrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.statLabel {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.statValue {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1;
+  margin-bottom: var(--spacing-xs);
+}
+
+.statSubInfo {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.positive {
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.negative {
+  color: var(--color-danger);
+  font-weight: 600;
+}
+
+/* Main Grid */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+/* Blood Grid */
+.bloodGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.bloodItem {
+  background-color: var(--color-surface-solid);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.bloodItem:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.bloodHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+}
+
+.bloodTypeIcon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #a8202d 100%);
+  color: white;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
+}
+
+.bloodDetails {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+}
+
+.bloodUnits {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.bloodUnits span {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.bloodTrend {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.progressBar {
+  height: 6px;
+  background-color: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 1s ease-out;
+}
+
+/* Urgent Requests */
+.urgentList {
+  display: flex;
+  flex-direction: column;
+}
+
+.urgentItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-fast);
+}
+
+.urgentItem:hover {
+  background-color: rgba(230, 57, 70, 0.02);
+}
+
+.urgentItem:last-child {
+  border-bottom: none;
+}
+
+.urgentIcon {
+  background-color: rgba(230, 57, 70, 0.1);
+  padding: 10px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.urgentInfo {
+  flex: 1;
+}
+
+.urgentInfo h4 {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.urgentInfo p {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.urgentMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.time {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.cardFooter {
+  padding: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+@media (max-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+}
